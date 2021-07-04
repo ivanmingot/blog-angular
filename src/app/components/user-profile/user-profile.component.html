@@ -1,0 +1,16 @@
+<div class="profile-section pt-3 pt-lg-0">
+	<img *ngIf="!identity" class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/ivan10.png" alt="image" >
+    <img *ngIf="identity" class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/irlandes.png" alt="image" >				
+	<div *ngIf="!identity" class="bio mb-3">Hi, my name is Iván. This is a small template blog as a sample for a technical exercise to Square1.<br><a href="http://webnub.org/ivan_mingot/">Find out more about me</a>
+	</div>
+	<div *ngIf="identity" class="bio mb-3">Hi <span class="transformation1">{{identity.name}}</span>, You are in now. Here you can add new posts and check your posts.<br>
+	</div>
+	<ul *ngIf="!identity" class="social-list list-inline py-3 mx-auto">
+		<li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
+		<li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
+		<li class="list-inline-item"><a href="#"><i class="fab fa-github-alt fa-fw"></i></a></li>
+		<li class="list-inline-item"><a href="#"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
+		<li class="list-inline-item"><a href="#"><i class="fab fa-codepen fa-fw"></i></a></li>
+	</ul>
+	<hr> 
+</div> 

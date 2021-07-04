@@ -46,16 +46,10 @@ export class MyPostsComponent implements OnInit {
 				
 				for(var i = 0; i< this.posts.length; i++){
 					this.posts[i].created_at = new Date(this.posts[i].created_at).toDateString();
-				  
 				}
-			  
-				
-				
-				}else{
+			}else{
 					
 			}
-			
-			
 		},
 		error => {
 			console.log(<any>error);

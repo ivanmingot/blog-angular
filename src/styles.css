@@ -190,7 +190,7 @@ a {
 }
 /*END LOGIN/REGISTER FORMS*/
 /*NAV*/
-header{
+.side-header{
 	background: #068581!important;
 }
 .nav-item a{
@@ -331,4 +331,5 @@ footer{
 @media only screen and (max-width: 479px){
     .modal-dialog{ width: 95% !important; }
 }
+
 

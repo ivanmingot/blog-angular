@@ -46,19 +46,13 @@ export class PostDetailComponent implements OnInit {
 					//Redirection to home
 					this._router.navigate(['home']);
 				}
-						
-						
-						
-					
 			},
 			error => {
 				console.log(<any>error);
 				this._router.navigate(['home']);
-				
 			}
 		);
 		  
-		
 	  });
   }
 

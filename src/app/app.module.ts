@@ -16,9 +16,10 @@ import { ErrorComponent } from './components/error/error.component';
 import { PostNewComponent } from './components/post-new/post-new.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { MyPostsComponent } from './components/my-posts/my-posts.component';
-import { SearchComponent } from './components/search/search.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { PostsListComponent } from './components/home/posts-list/posts-list.component';
 
 
 
@@ -32,10 +33,10 @@ import { FooterComponent } from './components/footer/footer.component';
     PostNewComponent,
     PostDetailComponent,
     MyPostsComponent,
-    SearchComponent,
-	
-	AuthComponent,
+    AuthComponent,
 	FooterComponent,
+	UserProfileComponent,
+	PostsListComponent,
 	
     
   ],
