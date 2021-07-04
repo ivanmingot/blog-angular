@@ -1,16 +1,57 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { routing, appRoutingProviders } from './app.routing';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+import { AngularFileUploaderModule } from "angular-file-uploader";
+import { JwPaginationComponent } from 'jw-angular-pagination';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { HomeComponent } from './components/home/home.component';
+import { ErrorComponent } from './components/error/error.component';
+import { PostNewComponent } from './components/post-new/post-new.component';
+import { PostDetailComponent } from './components/post-detail/post-detail.component';
+import { MyPostsComponent } from './components/my-posts/my-posts.component';
+import { SearchComponent } from './components/search/search.component';
+import { AuthComponent } from './components/auth/auth.component';
+import { FooterComponent } from './components/footer/footer.component';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent,
+    ErrorComponent,
+    PostNewComponent,
+    PostDetailComponent,
+    MyPostsComponent,
+    SearchComponent,
+	JwPaginationComponent,
+	AuthComponent,
+	FooterComponent,
+	
+    
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+	routing,
+	FormsModule,
+	HttpClientModule,
+	FroalaEditorModule.forRoot(), 
+	FroalaViewModule.forRoot(),
+	AngularFileUploaderModule,
+	NgxPaginationModule
   ],
-  providers: [],
+  providers: [
+	appRoutingProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,93 @@
+<div class="loading" *ngIf="!posts">
+	Loading
+</div>
+<div class="" *ngIf="posts">
+	<section class="cta-section theme-bg-light py-5">
+		<div class="container text-center">
+			<h2 class="heading">SquareBlog - A Blog Made with Angular and Laravel</h2>
+			<div class="intro">Welcome to my blog. You can sort posts by publication date.</div>
+			<br>
+			<form class="signup-form form-inline justify-content-center pt-3">
+				<div class="form-group">
+					<label class="sr-only" for="semail">Date</label>
+					<input type="date" id="semail" name="semail1" class="form-control mr-md-1 semail" placeholder="Publication date"  [(ngModel)]="query">
+				</div>
+				<button type="submit" class="btn btn-success" (click)="getPosts()">Search</button> 
+			</form>
+			<small><a data-toggle="modal" data-target="#searchModal"><i class="fas fa-filter"></i> Custom filter</a></small>
+		</div>
+		<!-- Modal TO CUSTOM SEARCH -->
+		<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Custom Date Filter</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  </div>
+			  <form>
+			  <div class="modal-body">
+				
+				  <div class="form-group">
+					<label for="recipient-name" class="col-form-label">From</label>
+					<input type="date" class="form-control" id="recipient-name" name="from" [(ngModel)]="from">
+				  </div>
+				  <div class="form-group">
+					<label for="recipient-name" class="col-form-label">To</label>
+					<input type="date" class="form-control" id="recipient-name" name="to" [(ngModel)]="to">
+				  </div>
+				
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" data-dismiss="modal" (click)="getPosts()">SEARCH</button>
+			  </div>
+			  </form>
+			</div>
+		  </div>
+		</div>
+		
+	</section>
+	
+	<section class="blog-list px-3 py-5 p-md-5">
+		<div class="container">
+			<div class="item mb-5" *ngFor="let post of posts | paginate: { itemsPerPage: 5, currentPage: p }">
+				<div class="media">
+					<div  *ngIf="post.image">
+						<img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{url + 'post/image/' + post.image }}" alt="image">
+					</div>
+					<div  *ngIf="!post.image">
+						<img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="assets/images/laravel.jpeg" alt="image">
+					</div>
+					<div class="media-body">
+						<h3 class="title mb-1"><a href="blog-post.html">{{post.title}}</a></h3>
+						 <div class="meta mb-1"><span class="date">{{post.publication_date}}</span><span class="comment">by {{post.user.name}}</span>
+						 </div>
+						<div class="intro" [innerHtml]="post.description"></div>
+						<a class="more-link" [routerLink]="['/post', post.id]">Read more &rarr;</a>
+					</div>
+				</div>
+			</div>
+			<!--Pagination-->
+			<div class="container text-center">
+				<pagination-controls class="my-pagination" 
+					(pageChange)="p = $event"
+					maxSize="0"
+					previousLabel="Previus posts"
+					nextLabel="More posts"
+					></pagination-controls>
+			</div>
+			<div class="media-body" *ngIf="posts == ''">
+				<h3 class="title mb-1">NO POSTS found at that date</h3>
+						  
+				<nav class="blog-nav nav nav-justified my-5" >
+					<a class="nav-link-next nav-item nav-link rounded">Back to POSTS<i class="arrow-next fas fa-long-arrow-alt-right" onclick = "back()"></i></a>
+				</nav>
+			</div>
+		</div>
+	 </section>
+	
+</div>
+
+

@@ -1,0 +1,46 @@
+<div id="config-panel" class="config-panel d-none d-lg-block" >
+    <div class="panel-inner">
+        <a *ngIf="!identity" id="config-trigger" class="config-trigger config-panel-hide text-center" [routerLink]="['/login']"><i class="fas fa-user fa-spin mx-auto" data-fa-transform="down-6" ></i></a>
+		<a  data-toggle="modal" data-target="#logoutModal" *ngIf="identity" id="config-trigger" class="config-trigger config-panel-hide text-center" ><i class="fas fa-sign-out-alt fa-spin mx-auto" data-fa-transform="down-6" ></i></a>
+    </div>
+</div>
+
+
+
+
+<!-- Modal -->
+
+   
+   <div class="">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="modal-box">
+                <!-- Button trigger modal -->
+                
+ 
+                <!-- Modal -->
+                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content clearfix">
+                            
+                            <div class="modal-content clearfix">
+                                
+                                <div class="modal-body">
+                                    <div class="modal-icon">
+                                        <i class="fas fa-door-open"></i>
+                                    </div>
+                                    <h3 class="title">Exit</h3>
+                                    <p class="description">Do you want to exit?</p>
+                                    <button class="btn" data-dismiss="modal"><a [routerLink]="['/logout/1']">Exit</a></button>
+                                    <button class="btn cancel" data-dismiss="modal">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            

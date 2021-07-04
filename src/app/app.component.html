@@ -1,20 +1,73 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<auth [identity]="identity"></auth> <!-- autn nav-->
 
+<header class="header text-center">	    
+	<h1  class="blog-name pt-lg-4 mb-0">
+		<a *ngIf="!identity" [routerLink]="['/home']">Iván's Blog</a>
+		<a *ngIf="identity" [routerLink]="['/home']"><span class="transformation2">{{identity.name}}</span></a>
+	</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark" >
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div id="navigation" class="collapse navbar-collapse flex-column" >
+			<div class="profile-section pt-3 pt-lg-0">
+				<img *ngIf="!identity" class="profile-image mb-3 rounded-circle mx-auto" src="/assets/images/ivan10.png" alt="image" >
+                <img *ngIf="identity" class="profile-image mb-3 rounded-circle mx-auto" src="/assets/images/irlandes.png" alt="image" >				
+				<div *ngIf="!identity" class="bio mb-3">Hi, my name is Iván. This is a small template blog as a sample for a technical exercise to Square1.<br><a href="http://webnub.org/ivan_mingot/">Find out more about me</a>
+				</div><!--//bio-->
+				<div *ngIf="identity" class="bio mb-3">Hi <span class="transformation1">{{identity.name}}</span>, You are in now. Here you can add new posts and check your posts.<br>
+				</div>
+				<ul *ngIf="!identity" class="social-list list-inline py-3 mx-auto">
+			        <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
+			        <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
+			        <li class="list-inline-item"><a href="#"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			        <li class="list-inline-item"><a href="#"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
+			        <li class="list-inline-item"><a href="#"><i class="fab fa-codepen fa-fw"></i></a></li>
+			    </ul><!--//social-list-->
+			
+			    <hr> 
+				
+			</div><!--//profile-section-->
+			
+			<ul class="navbar-nav flex-column text-left" *ngIf="identity">
+				<li class=" nav-item " >
+					<a class="nav-link" 
+						[routerLink]="['/home']"><i data-toggle="tooltip" data-placement="right" title="All posts" class="fas fa-home fa-fw mr-2"></i>All posts <span class="sr-only">(current)</span>
+					</a>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link" [routerLink]="['/post-new']"><i data-toggle="tooltip" data-placement="right" title="Add post"class="fas fa-plus-circle fa-fw mr-2"></i>Add post <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" [routerLink]="['/myposts/identity.sub']"><i data-toggle="tooltip" data-placement="right" title="check my posts" class="fas fa-check-circle fa-fw mr-2"></i>Check posts</a>
+			    </li>
+				<li class="nav-item auth_side_nav">
+					<a class="nav-link" [routerLink]="['/logout/1']"><i data-toggle="tooltip" data-placement="right" title="Logout" class="fas fa-sign-out-alt fa-fw mr-2"></i>Logout <span class="sr-only">(current)</span></a>
+				</li>
+			</ul>
+			
+			<ul class=" auth_side_nav navbar-nav flex-column text-left" *ngIf="!identity">
+				<li class=" nav-item " >
+					<a class="nav-link" 
+						[routerLink]="['/login']"><i data-toggle="tooltip" data-placement="right" title="Login" class="fas fa-user-circle fa-fw mr-2"></i>Login <span class="sr-only">(current)</span>
+					</a>
+				</li>
+				
+			
+				
+			</ul>
+			
+			
+		</div>
+	</nav>
+	
+</header>
+
+
+<div class="main-wrapper">
+	<!--CONTENT-->
+	<router-outlet></router-outlet>
+	<app-footer></app-footer>
+</div>	
+	

@@ -1,0 +1,46 @@
+
+<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+	<h1>{{page_title}}</h1>
+	<p>Add a new post to the blog</p>
+	<hr>
+	<!--Alert messages-->
+		<div class="alert alert-success" *ngIf="status == 'success'">
+			You add a new Post, <a [routerLink]="['/post', post.id]">Check out the new post</a>
+		</div>
+		<div class="alert alert-danger" *ngIf="status == 'error'">
+			Somethig was wrong
+		</div>
+
+	<!-- FORM NEW POST-->
+	
+		<form class ="col-md-8 ml-0 pl-0" #postNew ="ngForm" (ngSubmit)="onSubmit(postNew)">
+			<div class="form-group">
+				<label for="title">Title</label>
+				<input type="text" name="title" #title="ngModel" [(ngModel)]="post.title" class="form-control" required>
+				
+				<small *ngIf="!title.valid && title.touched" class="invalid-feedback d-block">
+					The title is invalid
+				</small>
+			</div>
+			<div class="form-group">
+				<label for="description">Description</label>
+				<textarea [froalaEditor]="froala_options"  name="description" #description="ngModel" [(ngModel)]="post.description" class="form-control" required>
+				</textarea>
+				
+				<small *ngIf="!description.valid && description.touched" class="invalid-feedback d-block">
+					The description is invalid
+				</small>
+			</div>
+			
+			<div class="form-group">
+				<label for="image">Pictute</label>
+				<angular-file-uploader
+					[config]="afuConfig"
+					[resetUpload]="restVar"
+					(ApiResponse)="imageUpload($event)">
+				</angular-file-uploader>
+			</div>
+			<input type="submit" value="save" class="btn btn-success" [disabled]="postNew.invalid" />
+		</form>
+	</div>
+

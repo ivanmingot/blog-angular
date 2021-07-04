@@ -1,0 +1,22 @@
+<article class="blog-post px-3 py-5 p-md-5">
+	<div class="container">
+
+		<header class="blog-post-header">
+			<h2 class="title mb-2">{{post.title}}</h2>
+			<div class="meta mb-3"><span class="date">{{post.created_at}}</span><span class="time">{{post.user.name}}</span><span class="comment"><a href="#">4 comments</a></span></div>
+		</header>
+			    
+		<div class="blog-post-body">
+			<figure class="blog-banner" *ngIf="post.image">
+				<a href="https://made4dev.com"><img class="img-fluid" src="{{url + 'post/image/' + post.image }}" alt="image"></a>
+			</figure>
+			<p [innerHtml]="post.description"> </p>
+		</div>
+	</div><!--//container-->
+</article>
+	    
+	    
+	    
+	    
+    
+    

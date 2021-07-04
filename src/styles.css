@@ -1,1 +1,325 @@
-/* You can add global styles to this file, and also import other style files */
+
+/*TEXT TRANSFORMATION*/
+.transformation1 { text-transform: capitalize;}   
+.transformation2 { text-transform: uppercase;}   
+.transformation3 { text-transform: lowercase;} 
+
+
+
+
+a:focus,
+.button:focus {
+	text-decoration: none!important;
+	outline: none
+}
+
+a {
+	color: #635c5c;
+	text-decoration: none!important;
+}
+
+a:hover {
+	color: #fff
+}
+
+/*LOGIN/REGISTER FORMS*/
+.card0 {
+   
+    border-radius: 0px
+}
+
+.card2 {
+    margin: 0px 40px
+}
+
+.logo {
+    width: 200px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 35px
+}
+
+.image {
+    width: 100%;
+   
+}
+
+.border-line {
+    border-right: 1px solid #EEEEEE
+}
+
+.facebook {
+    background-color: #3b5998;
+    color: #fff;
+    font-size: 18px;
+    padding-top: 5px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer
+}
+
+.twitter {
+    background-color: #1DA1F2;
+    color: #fff;
+    font-size: 18px;
+    padding-top: 5px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer
+}
+
+.linkedin {
+    background-color: #2867B2;
+    color: #fff;
+    font-size: 18px;
+    padding-top: 5px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer
+}
+
+.line {
+    height: 1px;
+    width: 45%;
+    background-color: #E0E0E0;
+    margin-top: 10px
+}
+
+.or {
+    width: 10%;
+    font-weight: bold
+}
+
+.text-sm {
+    font-size: 14px !important
+}
+
+::placeholder {
+    color: #BDBDBD;
+    opacity: 1;
+    font-weight: 300
+}
+
+:-ms-input-placeholder {
+    color: #BDBDBD;
+    font-weight: 300
+}
+
+::-ms-input-placeholder {
+    color: #BDBDBD;
+    font-weight: 300
+}
+
+input,
+textarea {
+    padding: 10px 12px 10px 12px;
+    border: 1px solid lightgrey;
+    border-radius: 2px;
+    margin-bottom: 5px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 14px;
+    letter-spacing: 1px
+}
+
+input:focus,
+textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #304FFE;
+    outline-width: 0
+}
+
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
+
+a {
+    color: inherit;
+    cursor: pointer
+}
+
+.btn-blue {
+    background-color: #1A237E;
+    width: 150px;
+    color: #fff;
+    border-radius: 2px
+}
+
+.btn-blue:hover {
+    background-color: #000;
+    cursor: pointer
+}
+
+.bg-blue {
+    color: #fff;
+    background-color: #1A237E
+}
+
+@media screen and (max-width: 991px) {
+    .logo {
+        margin-left: 0px
+    }
+
+    .image {
+        width: 300px;
+        height: 220px
+    }
+
+    .border-line {
+        border-right: none
+    }
+
+    .card2 {
+        border-top: 1px solid #EEEEEE !important;
+        margin: 0px 15px
+    }
+}
+/*END LOGIN/REGISTER FORMS*/
+/*NAV*/
+.nav-item a{
+	color: white!important;
+}
+ .nav-item a:hover{
+	 color: #11460D !important;
+ }
+ .btn:hover{
+	 background:#6DCDEE !important;
+ }
+ button:disabled {
+  cursor: not-allowed!important;
+  pointer-events: all !important;
+}
+.nav{
+	background: #F2F7F6   !important;
+	
+}
+.up-nav  a{
+	color: #898E90 !important;
+}
+.up-nav  a:hover{
+	color: #898E90 !important;
+}
+.cta-section{
+	background: #F2F7F6  !important;
+}
+/*AUTH*/
+.panel-inner i{
+	margin-top: 10px!important;
+}
+/*FOOTER*/
+footer{
+	
+	width: 100%;
+}
+/*IMAGES*/
+.media img{
+	height: 110px!important;
+	width:110px!important; 
+}
+/*MODAL LOGOUT*/
+.modal-box{ font-family: 'Poppins', sans-serif; }
+.modal-box .show-modal{
+    color: #fff;
+    background: #333;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+    padding: 9px 15px;
+    margin: 80px auto 0;
+    border: none;
+    outline: none;
+    display: block;
+    border-radius: 10px;
+    transition: all 0.3s ease 0s;
+}
+.modal-box .show-modal:hover,
+.modal-box .show-modal:focus{
+    color: #fff;
+    background-color: #41b507;
+    box-shadow: 0 2px 5px rgba(163, 104, 201, 0.4);
+    outline: none;
+}
+.modal-backdrop.in{
+    opacity: 0.7;
+    background-color: #fff;
+}
+.modal-box .modal-dialog{
+    width: 350px;
+    margin: 70px auto 0;
+}
+.modal.fade .modal-dialog{ transform: scale(0); }
+.modal.in .modal-dialog{ transform: scale(1); }
+.modal-box .modal-dialog .modal-content{
+    background: repeating-linear-gradient(45deg, #fff, #fff 20px, #fdfffc 20px, #fdfffc 40px);
+    text-align: center;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.modal-box .modal-dialog .modal-content .modal-body{ padding: 40px !important; }
+.modal-box .modal-dialog .modal-content .modal-body .modal-icon{
+    color: #41b507;
+    background-color: rgba(65,181,7,0.1);
+    font-size: 60px;
+    line-height: 120px;
+    height: 120px;
+    width: 120px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+}
+.modal-box .modal-dialog .modal-content .modal-body .title{
+    color: #1a1d4a;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+}
+.modal-box .modal-dialog .modal-content .modal-body .description{
+    color: #aaa;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    margin: 0 0 30px;
+}
+.modal-box .modal-dialog .modal-content .modal-body .btn{
+    color: #1a1d4a;
+    background: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+    padding: 7px 20px;
+    margin: 0 10px;
+    border: 1px solid #1a1d4a;
+    border-radius: 30px;
+    transition: all 0.3s ease 0s;
+}
+.modal-box .modal-dialog .modal-content .modal-body .btn:hover{
+    color: #fff;
+    background-color: #41b507;
+    border-color: transparent;
+}
+.modal-box .modal-dialog .modal-content .modal-body .btn.cancel{
+    color: #fff;
+    background-color: #41b507;
+    border-color: #41b507;
+}
+.modal-box .modal-dialog .modal-content .modal-body .btn.cancel:hover{
+    color: #fff;
+    background-color: #1a1d4a;
+    border-color: #1a1d4a;
+}
+.modal-box .modal-dialog .modal-content .modal-body .btn:focus{ outline: none; }
+@media only screen and (max-width: 479px){
+    .modal-dialog{ width: 95% !important; }
+}
