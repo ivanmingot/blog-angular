@@ -17,6 +17,7 @@ export class PostNewComponent implements OnInit {
 	public identity: any;
 	public post: Post;
 	public status;
+	public restVar;
 	
 	public froala_options: Object = {
 		charCouterCount: true,

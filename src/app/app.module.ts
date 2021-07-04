@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { AngularFileUploaderModule } from "angular-file-uploader";
-import { JwPaginationComponent } from 'jw-angular-pagination';
+
 import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
@@ -33,7 +33,7 @@ import { FooterComponent } from './components/footer/footer.component';
     PostDetailComponent,
     MyPostsComponent,
     SearchComponent,
-	JwPaginationComponent,
+	
 	AuthComponent,
 	FooterComponent,
 	

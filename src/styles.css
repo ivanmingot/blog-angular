@@ -22,6 +22,10 @@ a:hover {
 	color: #fff
 }
 
+.btn-search{
+	background: #068581!important;
+}
+	
 /*LOGIN/REGISTER FORMS*/
 .card0 {
    
@@ -186,8 +190,12 @@ a {
 }
 /*END LOGIN/REGISTER FORMS*/
 /*NAV*/
+header{
+	background: #068581!important;
+}
 .nav-item a{
 	color: white!important;
+	font-size: 14px!important;
 }
  .nav-item a:hover{
 	 color: #11460D !important;
@@ -268,7 +276,7 @@ footer{
 }
 .modal-box .modal-dialog .modal-content .modal-body{ padding: 40px !important; }
 .modal-box .modal-dialog .modal-content .modal-body .modal-icon{
-    color: #41b507;
+    color: #068581;
     background-color: rgba(65,181,7,0.1);
     font-size: 60px;
     line-height: 120px;
@@ -311,7 +319,7 @@ footer{
 }
 .modal-box .modal-dialog .modal-content .modal-body .btn.cancel{
     color: #fff;
-    background-color: #41b507;
+    background-color: #068581;
     border-color: #41b507;
 }
 .modal-box .modal-dialog .modal-content .modal-body .btn.cancel:hover{
@@ -323,3 +331,4 @@ footer{
 @media only screen and (max-width: 479px){
     .modal-dialog{ width: 95% !important; }
 }
+

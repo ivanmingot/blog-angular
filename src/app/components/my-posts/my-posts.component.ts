@@ -21,6 +21,7 @@ export class MyPostsComponent implements OnInit {
 	public posts: Array<Post>;
 	public url;
 	query: string = '';
+	public p;
 
   constructor(
 	private _userService: UserService,

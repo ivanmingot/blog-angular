@@ -4,7 +4,7 @@
 <div class="" *ngIf="posts">
 
 	<section class="cta-section theme-bg-light py-5">
-		<div class="container text-center" *ngIf="!posts.length == 0">
+		<div class="container text-center" *ngIf="posts.length > 0">
 			<h2 class="heading" ><span class="transformation2">{{user.name}}</span> Here you have yours <span class="badge badge-success">{{posts.length}} </span> POSTS</h2>
 			<div class="intro">Be patient, In a while you will be able to manage them!</div>
 		</div>
@@ -38,7 +38,7 @@
 			<!--Pagination-->
 			<div class="container text-center">
 				<pagination-controls class="my-pagination" 
-					(pageChange)="p = $event"
+				    (pageChange)="p = $event"
 					maxSize="0"
 					previousLabel="Previus posts"
 					nextLabel="More posts">
@@ -46,4 +46,7 @@
 			</div>
 		</div>
 	</section>
+</div>
+<div *ngIf="posts">
+	<app-footer></app-footer>
 </div>
