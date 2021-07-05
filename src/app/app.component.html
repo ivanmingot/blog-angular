@@ -4,7 +4,7 @@
 	<!--PICTURE-->
 	<h1  class="blog-name pt-lg-4 mb-0">
 		<a *ngIf="!identity" [routerLink]="['/home']">Iván's Blog</a>
-		<a *ngIf="identity" [routerLink]="['/home']"><span class="transformation2">{{identity.name}}</span></a>
+		<a *ngIf="identity" [routerLink]="['/home']"><h4 class="transformation2">{{identity.name}}</h4></a>
 	</h1>
 	<!--SIDE NAV-->
     <nav class="navbar navbar-expand-lg navbar-dark" >
@@ -17,6 +17,15 @@
 			<user-profile [identity]="identity"></user-profile> <!--user profile-->
 			
 			<!-- menu user log-->
+		
+			<div class="round" *ngIf="identity"> <!-- arrow down -->
+				<span class="span_arrow"></span>
+				<span class="span_arrow"></span>
+				<span class="span_arrow"></span>
+				<span class="span_arrow"></span>
+			</div>
+    
+			<br>
 			<ul class="navbar-nav flex-column text-left" *ngIf="identity">
 				<li class=" nav-item " >
 					<a class="nav-link" 
