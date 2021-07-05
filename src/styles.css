@@ -4,7 +4,9 @@
 .transformation2 { text-transform: uppercase;}   
 .transformation3 { text-transform: lowercase;} 
 
-
+html {
+  scroll-behavior: smooth;
+}
 
 
 a:focus,

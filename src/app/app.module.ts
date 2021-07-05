@@ -48,7 +48,8 @@ import { PostsListComponent } from './components/home/posts-list/posts-list.comp
 	FroalaEditorModule.forRoot(), 
 	FroalaViewModule.forRoot(),
 	AngularFileUploaderModule,
-	NgxPaginationModule
+	NgxPaginationModule,
+	InfiniteScrollModule
   ],
   providers: [
 	appRoutingProviders

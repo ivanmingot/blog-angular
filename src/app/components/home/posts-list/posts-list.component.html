@@ -23,9 +23,8 @@
 				</div>
 			</div>
 			<!--Pagination-->
-			
 			<div class="container text-center" *ngIf="posts.length > 0">
-				<pagination-controls class="my-pagination" 
+				<pagination-controls class="my-pagination"  (click)="pageChanged()"
 					(pageChange)="p = $event"
 					maxSize="0"
 					previousLabel="Previus posts"
